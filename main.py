@@ -54,7 +54,7 @@ async def on_interaction(interaction):
     user_responses[user_id] += 1
     # Tugas 6 - kirim pesan ke pengguna tentang hasil quiz jika mereka menjawab semua pertanyaan. Jika tidak, kirim pertanyaan berikutnya
     if user_responses[user_id] > len(quiz_questions) - 1:
-        await interaction.followup.send("Kuis selesai! Point kamu", {points[user_id]})
+        await interaction.followup.send(f"Kuis selesai! Point kamu {points[user_id]}")
         del user_responses[user_id]
     else:
         await send_question(interaction, user_id)
